@@ -311,8 +311,8 @@ body.theme-claude .entry-image {
   aspect-ratio: 220 / 138;
   object-fit: cover;
   border-radius: 10px;
-  border: 1px solid rgba(29, 29, 31, 0.08);
-  background: #ffffff;
+  border: 0;
+  background: transparent;
   display: block;
 }
 
@@ -637,6 +637,8 @@ body.theme-claude .publications .entry-image {
   width: 220px;
   height: 138px;
   aspect-ratio: 220 / 138;
+  border: 0;
+  background: transparent;
 }
 
 body.theme-claude .publications .pub-content {
