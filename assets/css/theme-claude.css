@@ -242,6 +242,45 @@ body.theme-claude .section-body {
   color: var(--colors-ink);
 }
 
+body.theme-claude .tagline {
+  font-style: italic;
+}
+
+body.theme-claude .typing-tagline {
+  font-family: "Courier New", "SFMono-Regular", "Menlo", "Monaco", "Consolas", monospace;
+  font-style: normal;
+  letter-spacing: 0.01em;
+  min-height: 1.47em;
+}
+
+body.theme-claude .typing-tagline::after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 1em;
+  margin-left: 3px;
+  vertical-align: -0.12em;
+  background: currentColor;
+  animation: typing-caret-blink 0.9s steps(1) infinite;
+}
+
+body.theme-claude .typing-tagline.typing-complete::after {
+  animation-duration: 1.2s;
+}
+
+@keyframes typing-caret-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.theme-claude .typing-tagline::after {
+    animation: none;
+    opacity: 0;
+  }
+}
+
 body.theme-claude .section-body p {
   margin: 0 0 14px;
   font-size: 17px;

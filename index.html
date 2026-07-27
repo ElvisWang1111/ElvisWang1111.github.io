@@ -72,8 +72,13 @@
           </p>
           <p>
             Recently, I have been thinking about what I call <em>wide research</em>. I am less interested in staying within a fixed path than the distant echoes between ideas. A problem becomes alive when it leaves its original domain and returns in a more fundamental form. AI, to me, makes this freedom of movement possible.
+          </p>
           <p>
             My recent work starts from observation. I often begin with phenomena that resist easy explanation, and try to extract from them a more fundamental form. This is the way I approach chain-of-thought in large language models, human-in-the-loop systems, and deep learning for finance.
+          </p>
+          <p class="tagline typing-tagline" data-typing-text="Turning madness into real intelligence." aria-label="Turning madness into real intelligence.">
+            <span class="typing-text"></span>
+          </p>
         </div>
       </div>
 
@@ -271,6 +276,37 @@
         const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
         setTheme(!isDark);
       });
+    })();
+  </script>
+  <script>
+    (function() {
+      const tagline = document.querySelector('.typing-tagline');
+      if (!tagline) return;
+
+      const text = tagline.dataset.typingText || '';
+      const output = tagline.querySelector('.typing-text');
+      if (!output) return;
+
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        output.textContent = text;
+        tagline.classList.add('typing-complete');
+        return;
+      }
+
+      let index = 0;
+      const typeNextCharacter = function() {
+        output.textContent = text.slice(0, index);
+
+        if (index > text.length) {
+          tagline.classList.add('typing-complete');
+          return;
+        }
+
+        index += 1;
+        window.setTimeout(typeNextCharacter, 58);
+      };
+
+      window.setTimeout(typeNextCharacter, 350);
     })();
   </script>
 </body>
