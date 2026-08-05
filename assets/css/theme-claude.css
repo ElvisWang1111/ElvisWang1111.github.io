@@ -288,6 +288,21 @@ body.theme-claude .section-body p {
   letter-spacing: -0.01em;
 }
 
+body.theme-claude .about-quote {
+  position: relative;
+  margin: 20px 0;
+  padding: 4px 0 4px 24px;
+}
+
+body.theme-claude .about-quote::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 6px;
+  border-radius: var(--radius-pill);
+  background: var(--colors-hairline);
+}
+
 body.theme-claude .opportunity-note {
   background: var(--colors-canvas);
   border: 0;
