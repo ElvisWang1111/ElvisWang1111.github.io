@@ -44,7 +44,9 @@
       <div class="profile-card">
         <a class="image avatar"><img src="assets/img/avatar.jpg" alt="avatar" onerror="this.src='assets/img/avatar.png'" /></a>
         <h1 class="site-name">Boyuan Wang</h1>
-        <p class="site-email"><a href="https://chatgpt.com/g/g-69b8e5fac8bc8191a7bd78e195232449-learning-machine" target="_blank" rel="noopener noreferrer">Learning Machine</a>, Slowly </p>
+        <p class="site-email typing-tagline" data-typing-text="Turning madness into real intelligence." aria-label="Turning madness into real intelligence.">
+          <span class="typing-text"></span>
+        </p>
 
         <div class="social-icons">
           <a href="mailto:bypurnine@outlook.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
@@ -61,9 +63,11 @@
       <div class="section" id="about-me">
         <h3 class="section-title">About</h3>
         <div class="section-body">
-          <p class="tagline typing-tagline" data-typing-text="Turning madness into real intelligence." aria-label="Turning madness into real intelligence.">
-            <span class="typing-text"></span>
-          </p>
+          <blockquote class="about-quote">
+            <p>“Indeed, clarifying philosophical issues was the original point of their work; the technological payoffs only came later!”</p>
+            <footer>— Scott Aaronson, <cite><a href="https://www.scottaaronson.com/papers/philos.pdf" target="_blank" rel="noopener noreferrer">Why Philosophers Should Care About Computational Complexity</a></cite></footer>
+          </blockquote>
+          <!-- <p class="tagline"><a href="https://chatgpt.com/g/g-69b8e5fac8bc8191a7bd78e195232449-learning-machine" target="_blank" rel="noopener noreferrer">Learning Machine</a>, Slowly</p> -->
           <p>
             Hi, I am a first-year Ph.D. student in Statistics and Data Science at Southern University of Science and Technology (SUSTech).
             I am very fortunate to be advised by <a href="https://yuxin-tao.github.io/" target="_blank" rel="noopener noreferrer">Prof. Yuxin Tao</a>. 
@@ -72,10 +76,7 @@
           <p>
             Recently, I have been thinking about what I call <em>wide research</em>. I am drawn to the unexpected connections between ideas that seem far apart. A problem becomes more interesting when it crosses into another field and reveals something more fundamental. To me, AI makes this freedom to move across fields possible.
           </p>
-          <blockquote class="about-quote">
-            <p>“Indeed, clarifying philosophical issues was the original point of their work; the technological payoffs only came later!”</p>
-            <footer>— Scott Aaronson, <cite><a href="https://www.scottaaronson.com/papers/philos.pdf" target="_blank" rel="noopener noreferrer">Why Philosophers Should Care About Computational Complexity</a></cite></footer>
-          </blockquote>
+
         </div>
       </div>
 
@@ -155,12 +156,14 @@
         <h3 class="section-title">Projects</h3>
         <div class="section-body">
           <article class="card project-card">
-            <img src="assets/img/project/zoomies.png" alt="Auto-Slides preview" class="entry-image" onerror="this.src='assets/img/avatar.jpg'" />
+            <a href="https://opentcs.cc" target="_blank" rel="noopener noreferrer">
+              <img src="assets/img/project/opentcs-card.png" alt="OpenTCS homepage preview" class="entry-image" onerror="this.src='assets/img/avatar.jpg'" />
+            </a>
             <div class="entry-content">
               <div class="project-title">
-                Zoomies: AI Generation Monitor
+                <a href="https://opentcs.cc" target="_blank" rel="noopener noreferrer">OpenTCS</a>
               </div>
-              <p>Zoomies is a Chrome extension that lets you know when AI websites are still generating or have finished.</p>
+              <p>OpenTCS builds shared infrastructure to accelerate AI-assisted progress on open problems in theoretical computer science.</p>
             </div>
           </article>
           <article class="card project-card">
@@ -172,6 +175,18 @@
               <p>AutoSTAT is a user-friendly agent framework for end-to-end data analysis and interactive optimization.</p>
             </div>
           </article>
+          <details class="more-projects">
+            <summary aria-label="More projects" title="More projects"></summary>
+            <article class="card project-card">
+              <img src="assets/img/project/zoomies.png" alt="Zoomies extension preview" class="entry-image" onerror="this.src='assets/img/avatar.jpg'" />
+              <div class="entry-content">
+                <div class="project-title">
+                  Zoomies: AI Generation Monitor
+                </div>
+                <p>Zoomies is a Chrome extension that lets you know when AI websites are still generating or have finished.</p>
+              </div>
+            </article>
+          </details>
         </div>
       </div>
 
