@@ -2,19 +2,19 @@
 <html lang="zh-CN">
 
 <head>
-  <title>Boyuan Wang - Homepage</title>
+  <title>Boyuan Wang</title>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Boyuan Wang is a first-year Ph.D. student in Statistics and Data Science at Southern University of Science and Technology (SUSTech). His research interests include large language models, chain-of-thought reasoning, human-in-the-loop systems, and deep learning for finance.">
   <meta name="keywords" content="Boyuan Wang, 王伯元, Southern University of Science and Technology, SUSTech, Statistics and Data Science, Machine Learning, Artificial Intelligence, Large Language Models, LLM, Chain-of-Thought, CoT, Human-in-the-Loop Systems, Deep Learning, Finance, Wide Research">
   <meta name="author" content="Boyuan Wang">
-  <meta property="og:title" content="Boyuan Wang - Homepage">
+  <meta property="og:title" content="Boyuan Wang">
   <meta property="og:description" content="First-year Ph.D. student in Statistics and Data Science at SUSTech. Interested in wide research, large language models, chain-of-thought reasoning, human-in-the-loop systems, and deep learning for finance.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://github.com/ElvisWang1111">
+  <meta property="og:url" content="https://elviswang1111.github.io/">
   
-  <link rel="canonical" href="https://github.com/ElvisWang1111">
+  <link rel="canonical" href="https://elviswang1111.github.io/">
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
 
   <link rel="stylesheet" href="./assets/css/font_sans_serif.css">
@@ -22,6 +22,24 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Boyuan Wang",
+      "alternateName": "王伯元",
+      "url": "https://elviswang1111.github.io/",
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "Southern University of Science and Technology"
+      },
+      "sameAs": [
+        "https://scholar.google.com/citations?user=7uxOuR4AAAAJ&hl=en",
+        "https://github.com/ElvisWang1111",
+        "https://x.com/Elviswang711212"
+      ]
+    }
+  </script>
 </head>
 
 
@@ -44,8 +62,8 @@
       <div class="profile-card">
         <a class="image avatar"><img src="assets/img/avatar.jpg" alt="avatar" onerror="this.src='assets/img/avatar.png'" /></a>
         <h1 class="site-name">Boyuan Wang</h1>
-        <p class="site-email typing-tagline" data-typing-text="Turning madness into real intelligence." aria-label="Turning madness into real intelligence.">
-          <span class="typing-text"></span>
+        <p class="site-email typing-tagline" data-typing-text="Learning Machine, Slowly" data-link-text="Learning Machine" aria-label="Learning Machine, Slowly">
+          <a href="https://chatgpt.com/g/g-69b8e5fac8bc8191a7bd78e195232449-learning-machine" target="_blank" rel="noopener noreferrer"><span class="typing-link-text"></span></a><span class="typing-text"></span>
         </p>
 
         <div class="social-icons">
@@ -247,7 +265,6 @@
     </footer>
   </div>
 
-  <script src="./assets/js/scale.fix.js"></script>
   <script>
     (function() {
       const themeToggle = document.getElementById('themeToggle');
@@ -296,11 +313,18 @@
       if (!tagline) return;
 
       const text = tagline.dataset.typingText || '';
+      const linkText = tagline.dataset.linkText || '';
+      const linkOutput = tagline.querySelector('.typing-link-text');
       const output = tagline.querySelector('.typing-text');
-      if (!output) return;
+      if (!linkOutput || !output) return;
+
+      const renderText = function(length) {
+        linkOutput.textContent = text.slice(0, Math.min(length, linkText.length));
+        output.textContent = text.slice(linkText.length, length);
+      };
 
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        output.textContent = text;
+        renderText(text.length);
         tagline.classList.add('typing-complete');
         return;
       }
@@ -311,13 +335,13 @@
 
       const typeNextCharacter = function() {
         tagline.classList.remove('typing-complete');
-        output.textContent = text.slice(0, index);
+        renderText(index);
 
         if (index > text.length) {
           tagline.classList.add('typing-complete');
           window.setTimeout(function() {
             index = 0;
-            output.textContent = '';
+            renderText(0);
             typeNextCharacter();
           }, restartDelay);
           return;

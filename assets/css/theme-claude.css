@@ -155,10 +155,11 @@ body.theme-claude .image.avatar {
 }
 
 body.theme-claude .image.avatar img {
+  max-width: 100%;
   width: 190px;
   /* height: 190px; */
   object-fit: cover;
-  border-radius: 12sitepx;
+  border-radius: 12px;
   border: 1px solid var(--colors-hairline);
 }
 
@@ -240,6 +241,7 @@ body.theme-claude .section-title {
 
 body.theme-claude .section-body {
   color: var(--colors-ink);
+  overflow-wrap: anywhere;
 }
 
 body.theme-claude .tagline {
@@ -489,6 +491,8 @@ body.theme-claude .waffle-grid {
 body.theme-claude .waffle-calendar {
   width: 100%;
   max-width: 860px;
+  overflow-x: auto;
+  padding-bottom: 6px;
 }
 
 body.theme-claude .waffle-month-row {
@@ -800,12 +804,14 @@ body.theme-claude .publications .pub-content .links {
   }
 
   body.theme-claude .project-card,
-  body.theme-claude .pub-row {
+  body.theme-claude .pub-row,
+  body.theme-claude .publications .pub-row {
     grid-template-columns: 1fr;
     gap: 12px;
   }
 
-  body.theme-claude .entry-image {
+  body.theme-claude .entry-image,
+  body.theme-claude .publications .entry-image {
     width: 100%;
     height: auto;
     aspect-ratio: 220 / 138;
@@ -826,6 +832,26 @@ body.theme-claude .publications .pub-content .links {
 }
 
 @media (max-width: 560px) {
+  body.theme-claude .nav-container {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  body.theme-claude .nav-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  body.theme-claude .nav-left {
+    flex-wrap: nowrap;
+  }
+
+  body.theme-claude .nav-left a {
+    flex: 0 0 auto;
+    padding-right: 10px;
+    padding-left: 10px;
+    white-space: nowrap;
+  }
+
   body.theme-claude .nav-container,
   body.theme-claude .wrapper {
     padding-left: 14px;
@@ -833,7 +859,7 @@ body.theme-claude .publications .pub-content .links {
   }
 
   body.theme-claude .section {
-    margin-bottom: 56px;
+    margin-bottom: 40px;
   }
 
   body.theme-claude .section-title,
@@ -843,6 +869,16 @@ body.theme-claude .publications .pub-content .links {
 
   body.theme-claude .life-photo-grid {
     grid-template-columns: 1fr;
+  }
+
+  body.theme-claude .card,
+  body.theme-claude .publications ol.bibliography li,
+  body.theme-claude .friend-card {
+    padding: 18px;
+  }
+
+  body.theme-claude .about-quote {
+    padding-left: 18px;
   }
 
   body.theme-claude .waffle-grid {
