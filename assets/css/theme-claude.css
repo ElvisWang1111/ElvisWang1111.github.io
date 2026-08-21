@@ -173,11 +173,14 @@ body.theme-claude .site-name {
 }
 
 body.theme-claude .site-email {
+  max-width: 100%;
   margin: 10px 0 22px;
   font-size: 14px;
   line-height: 1.29;
   letter-spacing: -0.224px;
   color: var(--colors-body-muted);
+  overflow-wrap: break-word;
+  text-wrap: balance;
 }
 
 body.theme-claude .social-icons {
