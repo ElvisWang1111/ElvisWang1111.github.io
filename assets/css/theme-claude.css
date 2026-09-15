@@ -447,6 +447,7 @@ body.theme-claude .research-history summary {
   width: auto;
   gap: 8px;
   font-size: 12px;
+  white-space: nowrap;
 }
 
 body.theme-claude .research-history summary::after {
