@@ -479,7 +479,7 @@ body.theme-claude .publications .links,
 body.theme-claude .blog-meta,
 body.theme-claude .life-meta,
 body.theme-claude .award-text,
-body.theme-claude .friend-meta {
+body.theme-claude .friend-card .friend-meta {
   font-size: 12px;
   line-height: 1.43;
   letter-spacing: -0.224px;
@@ -651,11 +651,16 @@ body.theme-claude .award-item {
   align-items: flex-start;
 }
 
+body.theme-claude .friends-grid {
+  column-gap: 24px;
+}
+
 body.theme-claude .friend-card {
   display: grid;
   grid-template-columns: 56px minmax(0, 1fr);
-  gap: 12px;
+  gap: 16px;
   align-items: center;
+  min-height: 128px;
   border: 0;
   border-radius: var(--radius-lg);
   padding: var(--spacing-lg);
@@ -673,7 +678,7 @@ body.theme-claude .friend-avatar {
 
 body.theme-claude .friend-card h4 {
   margin: 0 0 8px;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.19;
   letter-spacing: 0.231px;
   font-weight: 600;
@@ -681,6 +686,11 @@ body.theme-claude .friend-card h4 {
 
 body.theme-claude .friend-card p {
   margin: 0;
+}
+
+body.theme-claude .friend-card .friend-meta {
+  font-size: 14px;
+  white-space: nowrap;
 }
 
 body.theme-claude .btn,
@@ -860,6 +870,7 @@ body.theme-claude .publications .pub-content .links {
 
   body.theme-claude .friend-card {
     grid-template-columns: 48px minmax(0, 1fr);
+    min-height: 104px;
   }
 
   body.theme-claude .friend-avatar {
