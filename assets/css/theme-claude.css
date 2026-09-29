@@ -375,6 +375,14 @@ body.theme-claude .entry-image {
   display: block;
 }
 
+body.theme-claude .entry-image--contain {
+  object-fit: contain;
+}
+
+body.theme-claude .entry-image--scaled {
+  transform: scale(0.95);
+}
+
 body.theme-claude .entry-content {
   min-width: 0;
 }
